@@ -4,13 +4,16 @@ public class Tip {
         double bill = 53.5;
         System.out.println("Waiter: I hope you enjoyed your meal!");
         System.out.println("Thank you!");
-    
+        tipTheWaiter(bill);
         //Task 2: Call a function that tips the waiter.
     }
 
 
 
-    
+    public static void tipTheWaiter(double bill){
+        bill =bill*0.15;
+        System.out.println("Your service was wonderful! Please accept this tip: $"+ bill);
+    }
     //Task 1: Make a function here. See the doc comment for details.  
 
     /**
