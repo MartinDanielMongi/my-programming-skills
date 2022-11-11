@@ -1,24 +1,45 @@
+import java.util.Scanner;
+import static java.lang.Math.*;
+
 public class AreaCalculator {
+
+
     public static void main(String[] args) {
+        Scanner scan= new Scanner(System.in);
         System.out.println("Thank you for using the area calculator");
         System.out.println("This calculator lets you get the area of: ");
         System.out.println("1 - Square\n2 - Rectangle\n3 - Triangle\n4 - Circle\n");
+        System.out.println("Please, select one of the options:");
 
-        
-        //Task 5 – Call area functions.
-
-        // double square = area of square with a side of 2.
-        // double rectangle = area of rectangle with a length of 1, and a width of 2. 
-        // double triangle = area of triangle with a base of 1, and a width of 2. 
-        // double circle = area of circle with a radius of 2. 
-
-
-        //Task 7 – Call a function that prints all the areas. 
-
+        int option = scan.nextInt();
+        switch(option){
+            case 1:
+            System.out.println("You selected Square. Please select the side of it");
+            double sideOfSquare = scan.nextInt();
+            double result1=areaSquare(sideOfSquare);
+            System.out.println("The Area is:"+result1);break;
+            case 2:
+            System.out.println("You selected Rectangle. Please add lenght and width:");
+            double lengthOfRec =scan.nextInt();
+            double widthOfRec =scan.nextInt();
+            double result2=areaRectangle(lengthOfRec, widthOfRec);
+            System.out.println("The Area is:"+result2);break;
+            case 3:
+            System.out.println("You selected Triangle. Please add base and height:");
+            double baseOfTriangle =scan.nextInt();
+            double heightOfTriangle =scan.nextInt();
+            double result3=areaTriangle(baseOfTriangle, heightOfTriangle);
+            System.out.println("The Area is:"+result3);break;
+            case 4:
+            System.out.println("You selected Circle. Please add the radius:");
+            double radiusOfCircle =scan.nextInt();
+            double result4=areaCircle(radiusOfCircle);
+            System.out.println("The Area is:"+result4);break;
+            
+            default: 
+            System.out.println("That's not an option!");break;
+        }
     }
-
-    //Task 1 - Write a function that calculates the area of a square. 
-
 
     /**
      * Function name: areaSquare - returns the area of a square.
@@ -30,8 +51,14 @@ public class AreaCalculator {
      *  2. Calculates the area of the square. A = side²
      */
     public static double areaSquare(double side) {
-
-        return 0;
+        if(side>0){
+            double area= side *side;
+            return area;
+        }
+        else{
+            System.out.println("Error: impossible");
+            return 0;
+        }
     }
 
 
@@ -49,8 +76,14 @@ public class AreaCalculator {
      *  2. Calculates the area of the rectangle. A = length * width
      */
     public static double areaRectangle(double length, double width) {
-
-        return 0;  
+        if(length<0 || width<0){
+            System.out.println("Error: impossible");
+            return 0;
+        }
+        else{
+            double area = length * width;
+            return area;
+        }
     } 
 
     //Task 3 - Write a function that calculates the area of a triangle. 
@@ -66,8 +99,14 @@ public class AreaCalculator {
      *  2. Calculates the area of the triangle. A = (base * height)/2
      */ 
     public static double areaTriangle(double base, double height) {
-
-        return 0; 
+        if(base<0 || height<0){
+            System.out.println("Error:impossible");
+            return 0;
+        }
+        else{
+            double area= (base*height)/2;
+            return area; 
+        }
     }
 
     //Task 4 - Write a function that calculates the area of circle. 
@@ -83,8 +122,14 @@ public class AreaCalculator {
      *  2. Calculates the area of the circle. 
      */ 
     public static double areaCircle(double radius) {
-
-        return 0;
+        if(radius<0){
+            System.out.println("Error:impossible");
+            return 0;
+        }
+        else{
+        double area= PI * pow(radius, 2);
+        return area;
+        }
     }
 
 
