@@ -5,11 +5,26 @@ public class Javapedia {
         Scanner scan = new Scanner(System.in);
         System.out.println("\n**********Javapedia**********");
         System.out.println("How many historical figures will you register?");
-        //Task 1 – Ask the user: how many historical figures will you register?
-        //       – Store the value.
+        int figures= scan.nextInt();
+        scan.nextLine();
+        String[][] database= new String [figures][3];
         
         //Task 2 – Create a 2D array with a variable number of rows, and 3 values per row.         
-         
+        for(int i=0; i<database.length;i++){
+            System.out.println("Figure "+(i+1));
+            for(int j=0; j<database[0].length;j++){
+                if(j==0){
+                    System.out.println("\n-Name: ");
+                    database[i][j]=scan.nextLine();
+                }else if (j==1){
+                    System.out.println("\n-Date of Birth:");
+                    database[i][j]=scan.nextLine();
+                }else {
+                    System.out.println("\n-Occupation:");
+                    database[i][j]=scan.nextLine();
+                }
+            }
+        }
         //Watch out for the nextLine() pitfall. 
         /* Task 3 
         for (____) {
