@@ -1,21 +1,21 @@
 public class Pyramid {
     public static void main(String[] args) {
         char letter = 'a';
-            
-        for (int i = 1; i < 10; i++) {
-            if (i % 2 == 0) {
-                System.out.print("\n");
-                continue;
-            }
-            for (int j = 1; j <= 10; j++) {
-                letter++;
-                if (j < i) {
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.println(" ");
+            System.out.print("\n");
+            for (int j = 0; j <= 10; j++) {
+                if (i > j) {
                     System.out.print("   ");
                 } else {
+                
                     System.out.print(" " + letter + " ");
+                    j=10;
                 }
             }
-            System.out.print("\n");
+            letter++;
+
         }
     }
 }
