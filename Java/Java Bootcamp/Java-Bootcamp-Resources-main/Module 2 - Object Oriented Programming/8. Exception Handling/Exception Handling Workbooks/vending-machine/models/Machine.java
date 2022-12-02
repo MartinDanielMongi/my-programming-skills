@@ -10,7 +10,24 @@ public class Machine {
             }
         }
     }
-    
+    public boolean getLenth(int index){
+        try{
+            items[0][index]=items[0][index];
+            return true;
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("INVALID RANGE");
+            return false;
+        }
+    }
+    public boolean getRowLenth(int index){
+        try{
+            items[index][0]=items[index][0];
+            return true;
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("INVALID RANGE");
+            return false;
+        }
+    }
     public Item getItem(int row, int spot) {
         return new Item(this.items[row][spot]);
     }
@@ -19,8 +36,14 @@ public class Machine {
         this.items[row][spot] = new Item(item);
     }
 
-    public void dispense(int row, int spot) {
+    public boolean dispense(int row, int spot) {
+        if(items[row][spot].getQuantity()==0){
+            System.out.println("EMPTY SLOT");
+            return false;
+        }else{
         items[row][spot].setQuantity(items[row][spot].getQuantity() - 1);
+            return true;
+        }
     }
 
     public String toString() {

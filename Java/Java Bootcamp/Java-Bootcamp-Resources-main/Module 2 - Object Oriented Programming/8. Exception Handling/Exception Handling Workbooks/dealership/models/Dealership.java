@@ -15,15 +15,35 @@ public class Dealership {
     }
 
     public Car getCar(int index) {
+        
         return new Car(this.cars[index]);
     }
 
     
     public void sell(int index) {  
-        this.cars[index].drive();
-        this.cars[index] = null;
+        if(isEmpty()){
+            throw new IllegalStateException("There are no more cars");
+        }
+        
+        try{
+            this.cars[index].drive();
+            this.cars[index] = null;
+            
+        }catch(ArrayIndexOutOfBoundsException e ){
+            System.out.println("Choose a valid parking Slot");
+        }catch(NullPointerException e){
+            System.out.println("Spot "+ index+ " is empty");
+        }
     }
 
+    public boolean isEmpty(){
+        for (int i = 0; i < cars.length; i++) {
+            if(this.cars[i]!=null){
+                return false;
+            }
+        }
+        return true;
+    }
     /**
      * Name: isEmpty
      *
