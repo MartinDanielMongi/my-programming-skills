@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import constants.Regulation;
+
 public class Game {
 
     private String arena;
@@ -31,14 +33,14 @@ public class Game {
         return
             "\nArena: " + this.arena + 
             "\nDate: " + this.date.toString() +
-            "\nCourt length (feet): " + 94 + 
-            "\nRim height (feet): " + 10 + 
-            "\nDistance from three-point arc: " + 23 + 
-            "\nPoints awarded beyond the three-point arc: " + 3 +
-            "\nPoints awarded inside the three-point arc: " + 2 +
-            "\nPoints awarded from a free throw: " + 1 + 
-            "\nLength of each quarter (minutes): " + 12 +
-            "\nSeconds to attempt shot after gaining possession: " + 24;
+            "\nCourt length (feet): " + Regulation.COURT_LENGTH + 
+            "\nRim height (feet): " + Regulation.RIM_HEIGHT + 
+            "\nDistance from three-point arc: " + Regulation.THREE_POINT_DISTANCE + 
+            "\nPoints awarded beyond the three-point arc: " + Regulation.BEYOND_THREE_POINT_ARC +
+            "\nPoints awarded inside the three-point arc: " + Regulation.INSIDE_THREE_POINT_ARC +
+            "\nPoints awarded from a free throw: " + Regulation.FREE_THROW + 
+            "\nLength of each quarter (minutes): " + Regulation.QUARTER_LENGTH +
+            "\nSeconds to attempt shot after gaining possession: " + Regulation.POSSESSION_TIME;
     }
 
 

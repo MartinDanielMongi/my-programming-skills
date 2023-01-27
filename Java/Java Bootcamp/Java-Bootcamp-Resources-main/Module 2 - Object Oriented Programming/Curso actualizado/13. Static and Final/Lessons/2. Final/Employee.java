@@ -2,6 +2,8 @@ public class Employee {
 
     private String name;
     private int age;
+    public static final int MAX_AGE=65;
+    public static final int MIN_AGE=16;
     
     public Employee(String name, int age) {
         setAge(age);

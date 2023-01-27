@@ -2,6 +2,7 @@ package model;
 public class Car {
     private String make;
     private int year;
+    public enum TrafficLight {RED, YELLOW, GREEN};
 
     public Car(String make, int year) {
         this.make = make;
