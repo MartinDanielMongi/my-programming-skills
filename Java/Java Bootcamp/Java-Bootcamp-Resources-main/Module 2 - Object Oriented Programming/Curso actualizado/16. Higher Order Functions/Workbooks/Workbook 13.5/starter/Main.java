@@ -23,7 +23,16 @@ public class Main {
 
         System.out.println("\nThese books are on sale\n-----------------------");
         books.stream()
+            .filter(book -> {
+                return book.getGenre().equals("Romance");
+            })
+            .map(book ->{
+                return (new Book(book.getTitle(), book.getGenre(), book.getYear() ,book.getPrice()/2));
+            })
+            .sorted((right, left)-> left.getYear().compareTo(right.getYear()))
             // intermediate operations go here...
-            .forEach(null); // terminal operation
+            .forEach(book-> {
+                System.out.println(book);
+            }); // terminal operation
     }
 }

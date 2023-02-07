@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,8 +15,12 @@ public class Main {
             new Payment(LocalDate.of(2020, 6, 30), 100.00)
         );
 
-        // TODO
-
+        payments.forEach(payment-> {
+            System.out.println("Date: " + payment.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            System.out.println("Amount: " + payment.getAmount());
+            System.out.println("---");
+        });
+  
       }
     
   
