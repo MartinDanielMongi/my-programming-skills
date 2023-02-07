@@ -1,28 +1,37 @@
 import java.util.Arrays;
 import java.util.List;
 
+import javax.sql.rowset.spi.SyncResolver;
+
 public class Main {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "Dave");
 
         System.out.println("\n**************************************");
-        // names.stream()
-            
+        names.stream()
+            .map(name-> "Hello, " + name + "!")
+            .forEach(name -> System.out.println(name));
    
         System.out.println("\n**************************************");
         
         List<String> usernames = Arrays.asList("sparklingunicorn", "galactic_goddess", "neon_ninja", "purplepixiedust");
      
-        // String username =  usernames.stream();
+        String username =  usernames.stream()
+                .filter(usernamess -> usernamess.equals("neon_ninja"))
+                .findFirst()
+                .orElse(null);
      
-        // System.out.println("Found you: " + username);
+        System.out.println("Found you: " + username);
 
         System.out.println("\n**************************************");
+
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 
-        // long numEven = numbers.stream()
+        long numEven = numbers.stream()
+            .filter(numev-> 0==numev%2)
+            .count();
         
-        // System.out.println("There are " + numEven + " even numbers in this list");
+         System.out.println("There are " + numEven + " even numbers in this list");
         
     }   
     
